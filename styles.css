@@ -1,0 +1,133 @@
+
+*{ 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hide {
+    display: none;
+}
+
+body{
+    padding: 2rem;
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(to right bottom, 
+    pink, pink);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.header-img{
+    display: flex;
+    width: 85%;
+    max-width: 500px;
+    margin-inline: auto;
+    filter: drop-shadow(5px 5px 20px rgba(0,0,0,.2));   
+}
+
+.container{
+    flex: 1;
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.image-1,
+.image-2{
+  position:absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-1{
+    width: 175px;
+}
+
+.image-2{
+    width: 400px;
+}
+
+
+.btn{
+    position: absolute;
+    top: calc(100% - 1rem);
+    min-width:120px;
+    padding: .75rem 1rem;
+    font-size:1.25rem;
+    outline: none;
+    border: none;
+    background-color: #f8fafc;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.1);
+    cursor:pointer;
+    transition: 0.3s;   
+}   
+
+.btn:hover{
+    background-color: #e2e8f0;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.2)
+}
+
+.btn-yes {
+    left: 50%;
+    transform: translateX(calc(-100% - 1rem));
+    z-index: 1;
+}
+   
+.btn-no {
+    left: calc(50% + 1rem);
+    transition: all 0.5s ease;
+    z-index: 2;
+
+}
+
+.love-message {
+    font-family: 'Arial', sans-serif;
+    animation: pop-in 0.5s ease-out forwards;
+    color: #dc2626;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+@keyframes pop-in {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.image-2 {
+    width: 250px;
+    position: relative; /* Adjust positioning after PNG removal */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 50px; /* Add spacing from the top */
+}
+
+.confetti-heart {
+    position: fixed;
+    top: -20px; /* Start above the screen */
+    font-size: 24px; /* Size of the hearts */
+    animation: fall 4s linear infinite;
+    pointer-events: none; /* Prevent interaction */
+    z-index: 9999; /* Ensure hearts appear on top */
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg); /* Fall & spin */
+        opacity: 0; /* Fade out as it falls */
+    }
+}
